@@ -1,6 +1,8 @@
 /* ==================== GOOGLE FONTS ====================*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
+
+
 /*==================== VARIABLES CSS ====================*/
 :root {
   --header-height: 3rem;
@@ -186,7 +188,7 @@ img {
 
 /*==================== NAV ====================*/
 .nav {
-  max-width: 968px;
+  max-width: 970px;
   height: var(--header-height);
   display: flex;
   justify-content: space-between;
@@ -295,7 +297,7 @@ img {
 
 .home__social-icon {
   font-size: 1.25rem;
-  color: var(--first-color);
+  color: black;
 }
 
 .home__social-icon:hover {
@@ -361,15 +363,25 @@ img {
 
 .button {
   display: inline-block;
-  background-color: var(--first-color);
-  color: #ffff;
+  background-color: #57C9E0;
+  color: #ffffff;
   padding: 1rem;
   border-radius: 0.5rem;
   font-weight: var(--font-medium);
 }
-
+.contact-me{
+  display: inline-block;
+  background: linear-gradient( to bottom right, #1FA2FF,#12D8FA,#A6FFCB);
+  color: #000000;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-weight: var(--font-medium);
+}
+.contact-me:hover{
+  transform: scale(0.90);
+}
 .button:hover {
-  background-color: var(--first-color-alt);
+  transform: scale(0.90);
 }
 
 .button__icon {
@@ -398,9 +410,10 @@ img {
 }
 
 .button--link {
-  padding: 0;
+  padding: 8px;
   background-color: transparent;
   color: var(--first-color);
+  color: black;
 }
 
 .button--link:hover {
@@ -417,7 +430,8 @@ img {
 }
 
 .about__description {
-  text-align: center;
+  
+  text-align: justify;
   margin-bottom: var(--mb-2-5);
 }
 
@@ -525,7 +539,7 @@ img {
 }
 
 .skills__js {
-  width: 60%;
+  width: 95%;
 }
 
 .skills__wordpress {
@@ -533,35 +547,35 @@ img {
 }
 
 .skills__python {
-  width: 60%;
+  width: 100%;
 }
 
 .skills__tab {
-  width: 70%;
+  width: 98%;
 }
 
 .skills__sql {
+  width: 80%;
+}
+
+.skills__google {
+  width: 90%;
+}
+
+.skills__bank {
   width: 50%;
 }
 
 .skills__google {
-  width: 70%;
-}
-
-.skills__bank {
   width: 80%;
-}
-
-.skills__google {
-  width: 70%;
 }
 
 .skills__counter {
-  width: 80%;
+  width: 50%;
 }
 
 .skills__office {
-  width: 90%;
+  width: 80%;
 }
 
 .skills__close .skills__list {
@@ -936,7 +950,7 @@ img {
 }
 
 .footer__bg {
-  background-color: var(--first-color-second);
+  background: linear-gradient( to bottom right, #1FA2FF,#12D8FA,#A6FFCB);
   padding: 2rem 0 3rem;
 }
 
@@ -981,15 +995,17 @@ img {
 .footer__social {
   color: #fff;
 }
-
+.uil-facebook, .uil-instagram, .uil-twitter-alt, .uil-linkedin-alt, .uil-github-alt{
+  font-size: 30px;
+}
 /*========== SCROLL UP ==========*/
 .scrollup {
   position: fixed;
   right: 1rem;
   bottom: -20%;
-  background-color: var(--first-color);
+  background: linear-gradient( to bottom right, #1FA2FF,#12D8FA,#A6FFCB);
   opacity: 0.8;
-  padding: 0 0.3rem;
+  padding: 0.5rem 0.8rem;
   border-radius: 0.4rem;
   z-index: var(--z-tooltip);
   transition: 0.4s;
@@ -1268,7 +1284,8 @@ img {
     }
 
     .footer__links {
-      flex-direction: row;
+      flex-direction: column;
+      justify-content: center;
       column-gap: 2rem;
     }
     .footer__socials {
