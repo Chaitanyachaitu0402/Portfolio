@@ -46,9 +46,9 @@ const Contact = () => {
     emailjs.send('service_ux6pr78', 'template_lcdwsmq',
       {
         from_name: form.name,
-        to_name: 'Ragulram',
+        to_name: 'Chaitanya',
         from_email: form.email,
-        to_email: 'ragulram0427@gmail.com',
+        to_email: 'chaitanyadwarapudi.dev@gmail.com',
         message: form.message
       },
       'D7g4pcZUNWKlYKbr1'
