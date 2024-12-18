@@ -159,18 +159,7 @@ const Projects = () => {
                 </SwiperSlide>
               ))}
             </Swiper>
-            <motion.img
-              src={img.src}
-              alt={img.alt}
-              className="hidden lg:block absolute w-[25%] rounded-lg object-cover object-center pointer-events-none transition-opacity duration-200 ease-in-out"
-              style={{
-                top: imagePos.y,
-                left: imagePos.x,
-                opacity: img.opacity,
-                transform: 'translate(-30%, -110%)',
-                zIndex:1,
-              }}
-            />
+            
           </div>
         </div>
       </div>
