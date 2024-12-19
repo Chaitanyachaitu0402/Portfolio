@@ -218,7 +218,7 @@ import emailjs from '@emailjs/browser';
 import { slideIn, fadeIn ,textVariant } from "../utils/motion";
 import Section from "./Section";
 import Heading from "./Heading";
-import { socials } from "../constants";
+// import { socials } from "../constants";
 import { toast } from 'react-toastify';
 
 const Contact = () => {
@@ -226,6 +226,7 @@ const Contact = () => {
   const [form, setForm] = useState({
     name: '',
     email: '',
+    phone: '', // Added phone field
     message: ''
   });
   const [loading, setLoading] = useState(false);
@@ -265,6 +266,7 @@ const Contact = () => {
         to_name: form.name,
         from_email: form.email,
         to_email: form.email,
+        phone: form.phone, // Include phone in the email data
         message: form.message
       },
       'c2fsGUgWm6g5okYiC' // Replace with your EmailJS Public Key
@@ -277,6 +279,7 @@ const Contact = () => {
       setForm({
         name: '',
         email: '',
+        phone: '', // Reset phone field after submission
         message: ''
       });
     })
@@ -355,6 +358,18 @@ const Contact = () => {
               />
             </label>
             <label className='flex flex-col'>
+              <span className='body-2 mb-2'>Phone Number</span>
+              <input
+                required
+                type='tel'
+                name='phone'
+                value={form.phone}
+                onChange={handleChange}
+                placeholder="What's your phone number?"
+                className='bg-transparent py-4 px-6 placeholder:text-n-4 body-2 outline-none border-b-2 rounded-sm focus:border-color-2 font-medium'
+              />
+            </label>
+            <label className='flex flex-col'>
               <span className='body-2 mb-2'>Message</span>
               <textarea
                 required
@@ -375,36 +390,10 @@ const Contact = () => {
             </button>
           </form>
         </motion.div>
-        <motion.div
-          className="xl:absolute lg:absolute md:absolute bottom-[10rem] xl:left-2 lg:left-0 md:-left-3 z-1"
-          variants={slideIn('left', 'spring', 0.7, 1)}
-          initial="hidden"
-          animate={isInView ? "show" : "hidden"}
-        >
-          <ul className="flex justify-center mt-[5rem] md:flex-col lg:flex-col xl:flex-col">
-            {socials.map(({ iconUrl, id, title, url }) => (
-              <li className="p-5" key={id}>
-                <a href={url} target="_blank" className="cursor-pointer">
-                  <img src={iconUrl} width={24} height={25} alt={title} />
-                </a>
-              </li>
-            ))}
-          </ul>
-        </motion.div>
-        
-        <motion.div
-          className="relative z-10 md:mt-20 lg:mt-20 xl:mt-20 lg:block"
-          variants={textVariant()}
-          initial="hidden"
-          animate={isInView ? "show" : "hidden"}
-        >
-          <h5 className="mb-6 text-center text-n-1/50">
-            CHAITANYA DWARAPUDI &copy; {new Date().getFullYear()}
-          </h5>
-        </motion.div>
       </div>
     </Section>
   );
 };
 
 export default Contact;
+
